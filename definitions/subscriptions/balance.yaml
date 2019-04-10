@@ -40,6 +40,8 @@ properties:
         - remaining
         - used
         - type
+        - subtype
+        - status
       properties:
         descriptions:
           $ref: '#/definitions/Descriptions'
@@ -80,3 +82,15 @@ properties:
             - data
             - voice
             - value
+        subtype:
+          description: >
+            The kind of bundle. Currently, there's only a special type for an
+            unlimited bundle.
+          type: string
+          enum:
+            - default
+            - unlimited
+        status:
+          description: >
+            The status of the bundle. Currently this will be used to indicate if throttling is active
+          type: string
